@@ -14,35 +14,10 @@ import news4 from "../assets/news4.webp";
 import news5 from "../assets/news5.webp";
 import news6 from "../assets/news6.webp";
 
-const NewsAndArticles = () => {
+const NewsAndArticles = ({ setPage, page, data, load, totalPages }) => {
   const { auth } = useSelector((state) => state);
   const dispatch = useDispatch();
   const history = useHistory();
-
-  const [load, setLoad] = useState(false);
-  const [data, setData] = useState([]);
-  const [page, setPage] = useState(1);
-  const [limit, setLimit] = useState(10);
-  const [totalPages, setTotalPages] = useState(0);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        setLoad(true);
-        const response = await axios.get(
-          `http://localhost:5000/api/news?limit=${limit}&page=${page}`
-        );
-        setData([...data, ...response.data.posts]);
-        setTotalPages(response.data.totalPages);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      } finally {
-        setLoad(false);
-      }
-    };
-
-    fetchData();
-  }, [page, limit]);
 
   const handleLoadMore = async () => {
     setPage(page + 1);
@@ -105,21 +80,21 @@ const NewsAndArticles = () => {
               </div>
             </div>
           ))}
-          <div className="mt-[30px]">
-            {load && ( // Display load icon when loading
-              <div className="w-[40px] mx-auto">
-                <img src={LoadIcon} alt="loading" />
-              </div>
-            )}
-            {page < totalPages && !load && (
-              <button
-                className="btn btn-dark mx-auto d-block mb-[20px]"
-                onClick={handleLoadMore}
-              >
-                Load more
-              </button>
-            )}
-          </div>
+        </div>
+        <div className="mt-[30px]">
+          {load && ( // Display load icon when loading
+            <div className="w-[40px] mx-auto">
+              <img src={LoadIcon} alt="loading" />
+            </div>
+          )}
+          {page < totalPages && !load && (
+            <button
+              className="btn btn-dark mx-auto d-block mb-[20px]"
+              onClick={handleLoadMore}
+            >
+              Load more
+            </button>
+          )}
         </div>
       </div>
     </div>

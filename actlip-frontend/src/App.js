@@ -14,6 +14,7 @@ import ContactUs from "./pages/contact-us";
 import Dashboard from "./pages/dashboard";
 import Register from "./pages/register";
 import News from "./pages/news";
+import axios from "axios";
 import StatusModal from "./components/StatusModal";
 
 import { refreshToken } from "./redux/actions/authAction";
@@ -28,6 +29,31 @@ import SocketClient from "./SocketClient";
 function App() {
   const [show, setShow] = useState(false);
   const [show2, setShow2] = useState(false);
+
+  const [load, setLoad] = useState(false);
+  const [data, setData] = useState([]);
+  const [page, setPage] = useState(1);
+  const [limit, setLimit] = useState(10);
+  const [totalPages, setTotalPages] = useState(0);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        setLoad(true);
+        const response = await axios.get(
+          `http://localhost:5000/api/news?limit=${limit}&page=${page}`
+        );
+        setData([...data, ...response.data.posts]);
+        setTotalPages(response.data.totalPages);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      } finally {
+        setLoad(false);
+      }
+    };
+
+    fetchData();
+  }, [page, limit]);
 
   const { auth, status, modal, call } = useSelector((state) => state);
   const dispatch = useDispatch();
@@ -52,7 +78,20 @@ function App() {
         <Route exact path="/" component={Home} />
         <Route exact path="/about-us" component={AboutUs} />
         <Route exact path="/contact-us" component={ContactUs} />
-        <Route exact path="/news-and-articles" component={NewsAndArticles} />
+        <Route
+          exact
+          path="/news-and-articles"
+          render={(props) => (
+            <NewsAndArticles
+              {...props}
+              setPage={setPage}
+              page={page}
+              data={data}
+              load={load}
+              totalPages={totalPages}
+            />
+          )}
+        />
         <Route exact path="/register" component={Register} />
         <Route exact path="/news-and-articles/:id" component={News} />
         {auth.token ? "" : <Footer show2={show2} setShow2={setShow2} />}
