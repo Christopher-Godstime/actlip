@@ -41,7 +41,7 @@ function App() {
       try {
         setLoad(true);
         const response = await axios.get(
-          `http://localhost:5000/api/news?limit=${limit}&page=${page}`
+          `/api/news?limit=${limit}&page=${page}`
         );
         setData([...data, ...response.data.posts]);
         setTotalPages(response.data.totalPages);
