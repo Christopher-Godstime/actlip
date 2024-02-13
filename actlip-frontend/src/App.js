@@ -41,7 +41,7 @@ function App() {
       try {
         setLoad(true);
         const response = await axios.get(
-          `/api/news?limit=${limit}&page=${page}`
+          `https://actlip.onrender.com/api/news?limit=${limit}&page=${page}`
         );
         setData([...data, ...response.data.posts]);
         setTotalPages(response.data.totalPages);

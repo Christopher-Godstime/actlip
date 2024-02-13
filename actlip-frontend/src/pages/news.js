@@ -11,7 +11,7 @@ const News = ({ match }) => {
     const fetchPost = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:5000/api/news/${match.params.id}`
+          `https://actlip.onrender.com/api/news/${match.params.id}`
         );
         setPost(response.data.post);
       } catch (error) {
