@@ -3,6 +3,7 @@ import axios from "axios";
 import moment from "moment";
 import Carousel from "../components/Carousel";
 import LoadIcon from "../assets/loading.gif";
+import { getNewsApi } from "../utils/fetchData";
 
 const News = ({ match }) => {
   const [post, setPost] = useState(null);
@@ -10,9 +11,7 @@ const News = ({ match }) => {
   useEffect(() => {
     const fetchPost = async () => {
       try {
-        const response = await axios.get(
-          `https://actlip.onrender.com/api/news/${match.params.id}`
-        );
+        const response = await getNewsApi(`news/${match.params.id}`);
         setPost(response.data.post);
       } catch (error) {
         console.error("Error fetching post:", error);

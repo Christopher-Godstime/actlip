@@ -25,7 +25,7 @@ import io from "socket.io-client";
 
 import { GLOBALTYPES } from "./redux/actions/globalTypes";
 import SocketClient from "./SocketClient";
-
+import { getNewsApi } from "./utils/fetchData";
 function App() {
   const [show, setShow] = useState(false);
   const [show2, setShow2] = useState(false);
@@ -40,9 +40,7 @@ function App() {
     const fetchData = async () => {
       try {
         setLoad(true);
-        const response = await axios.get(
-          `https://actlip.onrender.com/api/news?limit=${limit}&page=${page}`
-        );
+        const response = await getNewsApi(`news?limit=${limit}&page=${page}`);
         setData([...data, ...response.data.posts]);
         setTotalPages(response.data.totalPages);
       } catch (error) {
