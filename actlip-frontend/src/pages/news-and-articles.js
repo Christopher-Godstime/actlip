@@ -4,17 +4,20 @@ import { useDispatch, useSelector } from "react-redux";
 import { CiSearch } from "react-icons/ci";
 import Carousel from "../components/Carousel";
 import moment from "moment";
-import { getNewsApi } from "../utils/fetchData";
-import { POST_TYPES } from "../redux/actions/postAction";
-import LoadIcon from "../assets/loading.gif";
-import axios from "axios";
-import LoadMoreBtn from "../components/LoadMoreBtn";
-import news3 from "../assets/news3.webp";
-import news4 from "../assets/news4.webp";
-import news5 from "../assets/news5.webp";
-import news6 from "../assets/news6.webp";
 
-const NewsAndArticles = ({ setPage, page, data, load, totalPages }) => {
+import LoadIcon from "../assets/loading.gif";
+
+const NewsAndArticles = ({
+  setPage,
+  page,
+  data,
+  load,
+  totalPages,
+  setSearchPosts,
+  posts,
+  searchLoad,
+  searchPosts,
+}) => {
   const { auth } = useSelector((state) => state);
   const dispatch = useDispatch();
   const history = useHistory();
@@ -39,14 +42,61 @@ const NewsAndArticles = ({ setPage, page, data, load, totalPages }) => {
   const formattedDate = today.toLocaleDateString("en-US", options);
   return (
     <div>
+      <div className="bg-sky-50 py-[32px] md:py-[80px] px-[3%] lg:px-[5%] xl:px-[10%]">
+        <div>
+          <h1 className="flex justify-center text-center text-[25px] lg:text-[32px] font-semibold">
+            Latest Updates
+          </h1>
+          <div className="flex justify-center">
+            <h4 className=" mt-[6px] lg:mt-[16px] text-[12px] md:text-[14px] leading-[26px] text-center md:w-[70%] text-gray-600 ">
+              Stay informed with the latest news and updates related to
+              technology law and innovation policy in Africa
+            </h4>
+          </div>
+        </div>
+      </div>
       <div className="px-[3%] lg:px-[5%] xl:px-[10%] pt-[30px] md:pt-[50px] pb-[50px] bg-gray-100">
         <div className="flex relative justify-end  w-[100%] md:w-[400px]">
           <input
             className="pr-[14px] pl-[40px] py-[12px] w-full focus:outline-none border-b-2 border-primary focus:border-primary  focus:border-2 rounded-t-[6px] text-gray-900 text-[12px]"
+            autoComplete="on"
+            name="searchPosts"
+            type="text"
             placeholder="Search news"
+            value={searchPosts}
+            id="searchPosts"
+            onChange={(e) =>
+              setSearchPosts(e.target.value.toLowerCase().replace(/ /g, ""))
+            }
           />
           <CiSearch className="absolute top-1/2 left-[14px] transform  -translate-y-1/2" />
         </div>
+        {searchPosts && (
+          <div className="w-[100%] md:w-[400px] px-[2%] py-[10px] md:py-[15px] bg-indigo-100 grid grid-cols-1 gap-[15px] rounded-b-[8px]">
+            {" "}
+            <div className="mx-auto ">
+              {searchLoad && (
+                <div className=" z-40  h-[50px] flex justify-center items-center">
+                  <img className="w-[30px]" src={LoadIcon} alt="loading" />
+                </div>
+              )}
+            </div>
+            {posts.map((post) => (
+              <div className=" " key={post._id}>
+                <Link to={`news-and-articles/${post._id}`}>
+                  <h4 className="line-clamp-2 text-[14px]">{post.head}</h4>
+                </Link>
+              </div>
+            ))}
+            {posts.length === 0 && !searchLoad ? (
+              <h4 className="text-[14px] text-gray-800 h-[50px] flex justify-center items-center font-[600]">
+                No results for your search
+              </h4>
+            ) : (
+              <div></div>
+            )}
+          </div>
+        )}
         <div className="md:flex justify-between mt-[30px] border-double border-b-[3px] border-black pb-[10px]">
           <h4 className="text-[12px] font-[600] font-pirate">
             {formattedDate}

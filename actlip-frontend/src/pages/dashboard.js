@@ -30,7 +30,7 @@ function Dashboard() {
   return (
     <div className=" font-poppins pb-[50px]">
       <div className="">
-        <div className="px-[3%] lg:px-[5%] xl:px-[10%] h-[70px] flex items-center justify-between bg-indigo-100">
+        <div className="px-[3%] lg:px-[5%] xl:px-[10%] h-[70px] flex items-center justify-between bg-sky-100">
           <div className="w-[80px] md:w-[100px]">
             <img src={logo} />
           </div>

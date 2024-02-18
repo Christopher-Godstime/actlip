@@ -57,7 +57,7 @@ function Register() {
 
   return (
     <div>
-      <div className="bg-indigo-100 px-[15px] md:px-[30px] font-poppins py-[40px] xl:px-[250px] lg:px-[150px]    md:pb-[50px] pb-[100px] items-center md:flex h-full">
+      <div className="bg-sky-100 px-[15px] md:px-[30px] font-poppins py-[40px] xl:px-[250px] lg:px-[150px]    md:pb-[50px] pb-[100px] items-center md:flex h-full">
         <div className="font-poppins lg:px-10 sm:w-3/4 mx-auto lg:my-0">
           <div>
             <div className="w-[100px] md:w-[120px] mx-auto">
@@ -186,7 +186,7 @@ function Register() {
             <div className=" mt-[64px]">
               <button
                 type="submit"
-                className="text-white text-sm font-medium bg-primary1 w-full h-[55px] rounded-[8px] "
+                className="text-white text-sm font-medium bg-primary1 hover:bg-sky-900 w-full h-[55px] rounded-[8px] "
               >
                 {loading === true ? (
                   <ClipLoader

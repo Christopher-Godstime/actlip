@@ -76,6 +76,20 @@ const newsCtrl = {
     }
   },
 
+  // Inside your controller where you fetch news
+
+  searchPost: async (req, res) => {
+    try {
+      const posts = await Posts.find({
+        head: { $regex: req.query.head, $options: "i" },
+      });
+
+      res.json({ posts });
+    } catch (err) {
+      return res.status(500).json({ msg: err.message });
+    }
+  },
+
   updatePost: async (req, res) => {
     try {
       const { head, content, images } = req.body;

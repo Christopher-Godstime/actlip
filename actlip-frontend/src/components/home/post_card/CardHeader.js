@@ -37,13 +37,13 @@ function CardHeader({ post }) {
     <div className="relative px-[3%] lg:px-[5%] xl:px-[10%] mb-[20px]">
       <button
         onClick={() => setShow(!show)}
-        className="px-[20px] py-[10px] rounded-[8px] bg-primary1 text-white text-[14px] hover:bg-indigo-800 w-full md:w-[200px] mt-[20px] md:mt-[0px]"
+        className="px-[20px] py-[10px] rounded-[8px] bg-primary1 text-white text-[14px] hover:bg-sky-900 w-full md:w-[200px] mt-[20px] md:mt-[0px]"
       >
         Menu
       </button>
 
       {show ? (
-        <div className="absolute z-40 bg-indigo-100 border border-gray-200 -top-[150px] w-[200px] p-[10px] rounded-[3px] grid grid-cols-1 gap-[20px]">
+        <div className="absolute z-40 bg-sky-100 border border-gray-200 -top-[150px] w-[200px] p-[10px] rounded-[3px] grid grid-cols-1 gap-[20px]">
           <div
             className="flex text-[15px] gap-[10px] items-center font-normal cursor-pointer "
             onClick={() => {

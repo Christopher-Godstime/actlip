@@ -15,7 +15,7 @@ const AboutUs = () => {
   }, [auth.token, history]);
   return (
     <div className="">
-      <div className="bg-aboutbg bg-no-repeat z-10   w-full bg-cover bg-center xl:h-[879px] h-[555px]  relative grid grid-cols-1 md:grid-cols-3 md:grid-rows-2 md:grid-flow-col gap-[40px] md:gap-[0px] md:gap-y-[80px] lg:gap-y-[120px] xl:gap-y-[160px] pt-[100px]">
+      {/* <div className="bg-aboutbg bg-no-repeat z-10   w-full bg-cover bg-center xl:h-[879px] h-[555px]  relative grid grid-cols-1 md:grid-cols-3 md:grid-rows-2 md:grid-flow-col gap-[40px] md:gap-[0px] md:gap-y-[80px] lg:gap-y-[120px] xl:gap-y-[160px] pt-[100px]">
         <div>
           <h4 className="text-[48px] font-medium text-yellow-400 flex justify-center xl:text-[72px]">
             99.9%
@@ -40,6 +40,17 @@ const AboutUs = () => {
             News and articles
           </h4>
         </div>
+      </div> */}
+
+      <div className="px-[2%] md:px-[3%] lg:px-[5%] 2xl:px-[10%] py-[40px] md:py-[80px] lg:py-[50px] bg-primary1  grid grid-cols-1 md:grid-cols-2">
+        <h4 className="xl:text-[35px] text-[20px] md:text-[25px] font-semibold mb-[15px] md:mb-[0px] text-gray-200">
+          Overview
+        </h4>
+        <h4 className="text-[14px] text-gray-200 xl:text-[18px] leading-[25px]">
+          Learn about our journey, mission, and core values that drive our
+          efforts to navigate the intersection of technology, law, and
+          innovation.
+        </h4>
       </div>
 
       <div className="grid md:grid-cols-2 grid-cols-1 gap-[33px] pb-[24px] md:pb-[40px] xl:pb-[88px] items-centerpx-[3%] lg:px-[5%] xl:px-[10%] mt-[50px]">
@@ -60,7 +71,7 @@ const AboutUs = () => {
       <div className="px-[3%] lg:px-[5%] xl:px-[10%] py-[91px] bg-gray-100 grid grid-cols-1 md:grid-cols-2 gap-[60px] items-end">
         <div>
           <div className="flex justify-center lg:mb-[20px] mb-[8px]">
-            <LiaBinocularsSolid className="text-[50px] text-primary" />
+            <LiaBinocularsSolid className="text-[50px] text-primary1" />
           </div>
           <h4 className="flex justify-center text-[28px] lg:text-[45px] font-semibold mb-[4px] lg:mb-[15px]">
             Vision
@@ -72,7 +83,7 @@ const AboutUs = () => {
         </div>
         <div>
           <div className="flex justify-center lg:mb-[20px] mb-[8px]">
-            <MdAltRoute className="text-[50px] text-primary" />
+            <MdAltRoute className="text-[50px] text-primary1" />
           </div>
           <h4 className="flex justify-center text-[28px] lg:text-[45px] font-semibold mb-[4px] lg:mb-[15px]">
             Mission

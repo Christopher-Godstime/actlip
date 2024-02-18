@@ -19,7 +19,7 @@ const ContactForm = () => {
 
   if (state.succeeded) {
     return (
-      <div className="bg-indigo-50 rounded-[5px] py-[10px] px-[10px] md:px-[30px]">
+      <div className="bg-sky-50 rounded-[5px] py-[10px] px-[10px] md:px-[30px]">
         <h4 className=" text-[25px] font-semibold">Thanks!</h4>
         <h4 className=" w-full  mt-[10px]  text-[16px] ">
           The form was submitted successfully.
@@ -120,7 +120,7 @@ const ContactForm = () => {
       <button
         type="submit"
         disabled={state.submitting}
-        className="mt-[32px] flex justify-center w-full text-white bg-primary1 hover:bg-indigo-9500 lg:text-[16px] text-[14px] py-[12px] rounded-[8px]"
+        className="mt-[32px] flex justify-center w-full text-white bg-primary1 hover:bg-sky-900 lg:text-[16px] text-[14px] py-[12px] rounded-[8px]"
       >
         Send message
       </button>
@@ -134,7 +134,7 @@ const ContactUs = () => {
 
   return (
     <div>
-      <div className="bg-indigo-50 py-[32px] md:py-[80px] px-[3%] lg:px-[5%] xl:px-[10%]">
+      <div className="bg-sky-50 py-[32px] md:py-[80px] px-[3%] lg:px-[5%] xl:px-[10%]">
         <div>
           <h1 className="flex justify-center text-center text-[25px] lg:text-[32px] font-semibold">
             Support
@@ -154,7 +154,9 @@ const ContactUs = () => {
           </h1>
           <div className="flex justify-center">
             <h4 className=" mt-[6px] lg:mt-[16px] text-[12px] md:text-[16px]  text-center lg:w-[600px] text-gray-600 ">
-              Kindly make use of the available options below to reach us
+              Connect with us through our provided email address, phone number,
+              and physical address, or use the convenient contact form for
+              inquiries and feedback.
             </h4>
           </div>
         </div>
@@ -162,8 +164,8 @@ const ContactUs = () => {
 
       <div className="bg-white pb-[20px] md:py-[40px] px-[3%] lg:px-[5%] xl:px-[10%] md:grid md:grid-cols-3">
         <div className="py-[40px] md:py-[0px]  border-b-[1px] xl:border-r-[1px] sm:border-b-[0px] border-gray-300">
-          <div className="flex justify-center items-center w-[70px] h-[70px] rounded-full bg-indigo-200 mx-auto">
-            <div className="flex justify-center items-center w-[50px] h-[50px] rounded-full bg-indigo-300">
+          <div className="flex justify-center items-center w-[70px] h-[70px] rounded-full bg-sky-200 mx-auto">
+            <div className="flex justify-center items-center w-[50px] h-[50px] rounded-full bg-sky-300">
               <MdOutlineMail className="text-[25px] text-primary" />
             </div>
           </div>
@@ -175,14 +177,14 @@ const ContactUs = () => {
           </h4>
           <h4 className="flex justify-center text-[15px]  text-primary text-center">
             <h4 className="mb-[16px] mt-[10px] text-[12px] md:text-[16px] lg:text-[16px] font-normal">
-              info@actlip.io
+              info@actlip.org
             </h4>
           </h4>
         </div>
 
         <div className="py-[40px] md:py-[0px]  border-b-[1px] xl:border-r-[1px] sm:border-b-[0px] border-gray-300">
-          <div className="flex justify-center items-center w-[70px] h-[70px] rounded-full bg-indigo-200 mx-auto">
-            <div className="flex justify-center items-center w-[50px] h-[50px] rounded-full bg-indigo-300">
+          <div className="flex justify-center items-center w-[70px] h-[70px] rounded-full bg-sky-200 mx-auto">
+            <div className="flex justify-center items-center w-[50px] h-[50px] rounded-full bg-sky-300">
               <IoLocationOutline className="text-[25px] text-primary" />
             </div>
           </div>
@@ -198,8 +200,8 @@ const ContactUs = () => {
         </div>
 
         <div className="py-[40px] md:py-[0px]  ">
-          <div className="flex justify-center items-center w-[70px] h-[70px] rounded-full bg-indigo-200 mx-auto">
-            <div className="flex justify-center items-center w-[50px] h-[50px] rounded-full bg-indigo-300">
+          <div className="flex justify-center items-center w-[70px] h-[70px] rounded-full bg-sky-200 mx-auto">
+            <div className="flex justify-center items-center w-[50px] h-[50px] rounded-full bg-sky-300">
               <FiPhone className="text-[25px] text-primary" />
             </div>
           </div>

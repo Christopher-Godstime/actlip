@@ -14,4 +14,6 @@ router
 
 router.route("/news/:id").get(newsCtrl.viewPost);
 
+router.get("/search", newsCtrl.searchPost);
+
 module.exports = router;

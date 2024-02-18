@@ -1,27 +1,92 @@
-import React from "react";
+import React, { useState } from "react";
 import { FaInstagram } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 import { FaFacebookF } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { FaArrowRightLong } from "react-icons/fa6";
 import logo from "../assets/logo-t1.png";
+import LoadIcon from "../assets/loading.gif";
+import { Link } from "react-router-dom";
+import jsonp from "jsonp";
 const Footer = () => {
+  const [email, setEmail] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [subscriptionStatus, setSubscriptionStatus] = useState(null);
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+    setLoading(true);
+    const url =
+      "https://gmail.us10.list-manage.com/subscribe/post?u=ffc5bdf96fb847004948ba72b&amp;id=81425676aa&amp;f_id=0008d9e5f0";
+    let timeoutOccured = false;
+    const timeoutDuration = 5000;
+    const timeoutId = setTimeout(() => {
+      timeoutOccured = true;
+      setLoading(false);
+      setSubscriptionStatus("Subscribed successfully!");
+      setTimeout(() => {
+        setSubscriptionStatus(null);
+      }, 5000);
+    }, timeoutDuration);
+
+    jsonp(
+      `${url}&EMAIL=${email}`,
+      { param: "c", timeout: timeoutDuration },
+      (err, data) => {
+        clearTimeout(timeoutId);
+        if (!timeoutOccured) {
+          if (err) {
+            console.error("Error:", err);
+            setLoading(false);
+            setSubscriptionStatus("Failed to subscribe. Please try again.");
+          } else {
+            console.log("Data:", data);
+            setLoading(false);
+            if (data && data.result === "success") {
+              setSubscriptionStatus("Subscribed successfully!");
+              setTimeout(() => {
+                setSubscriptionStatus(null);
+              }, 5000);
+            } else if (data && data.msg) {
+              setSubscriptionStatus(data.msg);
+            } else {
+              setSubscriptionStatus("Failed to subscribe. Please try again.");
+            }
+          }
+        }
+      }
+    );
+  };
+
   return (
     <div className="pb-[20px] pt-[20px] lg:py-[30px] px-[3%] lg:px-[5%] xl:px-[10%] bg-primary1">
-      <div className="mt-[20px] lg:mt-[0px]  w-full lg:w-[50%]">
+      <div className="mt-[20px] lg:mt-[0px] w-full lg:w-[50%]">
         <h4 className="text-[12px] md:text-[16px] text-white mb-[10px]">
           Subscribe to Newsletter
         </h4>
-        <div className="flex">
+        {loading && (
+          <div className="z-40 h-[50px] flex justify-center items-center">
+            <img className="w-[30px]" src={LoadIcon} alt="loading" />
+          </div>
+        )}
+        <form onSubmit={onSubmit} className="flex">
           <input
             type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
             placeholder="Enter your email"
-            className="bg-white py-[12px] px-[16px] h-[60px] rounded-l-[8px]  w-[70%]  text-[12px] md:text-[16px]"
+            className="bg-white py-[12px] px-[16px] h-[60px] rounded-l-[8px] w-[70%] text-[12px] md:text-[16px]"
           />
-          <button className="hover:bg-indigo-600  h-[60px] bg-indigo-500 text-white rounded-r-[8px]  w-[30%] flex justify-center items-center">
+          <button
+            type="submit"
+            className="hover:bg-sky-400 h-[60px] bg-[#6EAEF4] text-white rounded-r-[8px] w-[30%] flex justify-center items-center"
+          >
             <FaArrowRightLong className="text-[30px]" />
           </button>
-        </div>
+        </form>
+        {subscriptionStatus && (
+          <div className="text-white mt-2">{subscriptionStatus}</div>
+        )}
       </div>
       <div className="flex justify-between mt-[20px]">
         <div className="w-[100px] md:w-[120px] lg:hidden block">
@@ -50,39 +115,39 @@ const Footer = () => {
           </div>
         </div>
         <div className="mt-[20px] lg:mt-[0px]">
-          <a href="dashboard.html">
+          <Link to="/home">
             <h3 className="font-[500] text-[12px] md:text-[16px] text-white">
               Home
             </h3>
-          </a>
-          <a href="locations.html">
+          </Link>
+          <Link to="/about-us">
             <h3 className="font-[500] text-[12px] md:text-[16px] text-white mt-[20px]">
               About Us
             </h3>
-          </a>
-          <a href="report.html">
+          </Link>
+          <Link to="/projects">
             <h3 className="font-[500] text-[12px] md:text-[16px] text-white mt-[20px]">
-              Key Initiatives
+              Projects
             </h3>
-          </a>
+          </Link>
         </div>
         <div className="mt-[20px] lg:mt-[0px]">
-          <a href="about.html">
+          <Link to="/news-and-articles">
             <h3 className="font-[500] text-[12px] md:text-[16px] text-white">
               News and Articles
             </h3>
-          </a>
-          <a href="careers.html">
+          </Link>
+          <Link to="/contact-us">
             <h3 className="font-[500] text-[12px] md:text-[16px] text-white mt-[20px]">
               Contact Us
             </h3>
-          </a>
+          </Link>
 
-          <a href="contact.html">
+          <Link to="/privacy">
             <h3 className="font-[500] text-[12px] md:text-[16px] text-white mt-[20px]">
               Privacy Policy
             </h3>
-          </a>
+          </Link>
         </div>
         <div className="mt-[30px] lg:mt-[0px]">
           <h3 className="font-[500] text-[12px] md:text-[16px] text-white">

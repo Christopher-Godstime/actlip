@@ -16,21 +16,6 @@ const Navbar = ({ show, setShow }) => {
           </NavLink>
         </div>
         <div className="xl:flex hidden">
-          {/* <div className=" flex items-center px-[16px]">
-            <h4 className="text-black text-[12px] md:text-[16px] lg:text-[16px] font-medium mr-[8px] ">
-              <NavLink
-                to="/"
-                style={({ isActive }) => {
-                  return { color: isActive ? "#2E3192" : "black" };
-                }}
-              >
-                Home
-              </NavLink>
-            </h4>
-            <div>
-              <img className="w-[10px]" src={down} />
-            </div>
-          </div> */}
           <h4 className="text-black text-[12px] md:text-[16px] lg:text-[16px] font-medium mr-[8px] px-[16px]">
             <NavLink
               to="/"
@@ -41,7 +26,18 @@ const Navbar = ({ show, setShow }) => {
               Home
             </NavLink>
           </h4>
-
+          <div className=" flex items-center px-[16px]">
+            <h4 className="text-black text-[12px] md:text-[16px] lg:text-[16px] font-medium mr-[8px] ">
+              <NavLink
+                to="/news-and-articles"
+                style={({ isActive }) => {
+                  return { color: isActive ? "#2E3192" : "black" };
+                }}
+              >
+                News and Articles
+              </NavLink>
+            </h4>
+          </div>
           <div className=" flex items-center px-[16px]">
             <h4 className="text-black text-[12px] md:text-[16px] lg:text-[16px] font-medium mr-[8px] ">
               <NavLink
@@ -58,27 +54,16 @@ const Navbar = ({ show, setShow }) => {
           <div className=" flex items-center px-[16px]">
             <h4 className="text-black text-[12px] md:text-[16px] lg:text-[16px] font-medium mr-[8px] ">
               <NavLink
-                to="/impactful-initiatives"
+                to="/projects"
                 style={({ isActive }) => {
                   return { color: isActive ? "#2E3192" : "black" };
                 }}
               >
-                Impactful Initiatives
+                Projects
               </NavLink>
             </h4>
           </div>
-          <div className=" flex items-center px-[16px]">
-            <h4 className="text-black text-[12px] md:text-[16px] lg:text-[16px] font-medium mr-[8px] ">
-              <NavLink
-                to="/news-and-articles"
-                style={({ isActive }) => {
-                  return { color: isActive ? "#2E3192" : "black" };
-                }}
-              >
-                News and Articles
-              </NavLink>
-            </h4>
-          </div>
+
           <h4 className="text-black text-[12px] md:text-[16px] lg:text-[16px] font-medium mr-[8px] px-[16px]">
             <NavLink
               to="/contact-us"
@@ -149,7 +134,21 @@ const Navbar = ({ show, setShow }) => {
                 </NavLink>
               </h4>
             </div>
-
+            <div className="  lg:px-[16px] h-[70px] min-h-fit">
+              <h4
+                onClick={() => setShow(!show)}
+                className="text-black text-[12px] md:text-[16px] lg:text-[16px] font-medium mr-[8px] hover:cursor-pointer flex justify-center"
+              >
+                <NavLink
+                  to="/news-and-articles"
+                  style={({ isActive }) => {
+                    return { color: isActive ? "#2E3192" : "black" };
+                  }}
+                >
+                  News and Articles
+                </NavLink>
+              </h4>
+            </div>
             <div className="  lg:px-[16px] h-[70px] min-h-fit">
               <h4
                 onClick={() => setShow(!show)}
@@ -172,30 +171,16 @@ const Navbar = ({ show, setShow }) => {
                 className="text-black text-[12px] md:text-[16px] lg:text-[16px] font-medium mr-[8px] hover:cursor-pointer flex justify-center"
               >
                 <NavLink
-                  to="/impactful-initiatives"
+                  to="/projects"
                   style={({ isActive }) => {
                     return { color: isActive ? "#2E3192" : "black" };
                   }}
                 >
-                  Impactful Initiatives
+                  Projects
                 </NavLink>
               </h4>
             </div>
-            <div className="  lg:px-[16px] h-[70px] min-h-fit">
-              <h4
-                onClick={() => setShow(!show)}
-                className="text-black text-[12px] md:text-[16px] lg:text-[16px] font-medium mr-[8px] hover:cursor-pointer flex justify-center"
-              >
-                <NavLink
-                  to="/news-and-articles"
-                  style={({ isActive }) => {
-                    return { color: isActive ? "#2E3192" : "black" };
-                  }}
-                >
-                  News and Articles
-                </NavLink>
-              </h4>
-            </div>
+
             <div className="h-[70px] min-h-fit">
               <h4
                 onClick={() => setShow(!show)}

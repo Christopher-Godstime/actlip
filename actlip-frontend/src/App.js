@@ -11,6 +11,7 @@ import Login from "./pages/login";
 import AboutUs from "./pages/about-us";
 import NewsAndArticles from "./pages/news-and-articles";
 import ContactUs from "./pages/contact-us";
+import Projects from "./pages/projects";
 import Dashboard from "./pages/dashboard";
 import Register from "./pages/register";
 import News from "./pages/news";
@@ -55,6 +56,29 @@ function App() {
     fetchData();
   }, [page, limit]);
 
+  const [searchPosts, setSearchPosts] = useState("");
+  const [posts, setPosts] = useState([]);
+  const [searchLoad, setSearchLoad] = useState(false);
+
+  useEffect(() => {
+    const fetchPost = async () => {
+      try {
+        setSearchLoad(true);
+        const response = await axios.get(
+          `https://actlip.onrender.com/api/search?head=${searchPosts}`
+        );
+        setPosts(response.data.posts);
+        setSearchLoad(false);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      } finally {
+        setSearchLoad(false);
+      }
+    };
+
+    fetchPost();
+  }, [searchPosts]);
+
   const { auth, status, modal, call } = useSelector((state) => state);
   const dispatch = useDispatch();
 
@@ -72,12 +96,22 @@ function App() {
   }, [dispatch, auth.token]);
   return (
     <Router>
-      {auth.token ? "" : <Navbar show={show} setShow={setShow} />}
+      {auth.token ? (
+        ""
+      ) : (
+        <Navbar className="z-40" show={show} setShow={setShow} />
+      )}
       <div className={show ? `font-poppins hidden xl:inline` : ` font-poppins`}>
         <Route exact path="/login" component={auth.token ? Dashboard : Login} />
-        <Route exact path="/" component={Home} />
+        <Route
+          exact
+          path="/"
+          render={(props) => <Home {...props} posts={posts} />}
+        />
+        <Route exact path="/projects" component={Projects} />
         <Route exact path="/about-us" component={AboutUs} />
         <Route exact path="/contact-us" component={ContactUs} />
+
         <Route
           exact
           path="/news-and-articles"
@@ -89,6 +123,10 @@ function App() {
               data={data}
               load={load}
               totalPages={totalPages}
+              setSearchPosts={setSearchPosts}
+              posts={posts}
+              searchLoad={searchLoad}
+              searchPosts={searchPosts}
             />
           )}
         />
