@@ -42,7 +42,7 @@ const NewsAndArticles = ({
   const formattedDate = today.toLocaleDateString("en-US", options);
   return (
     <div>
-      <div className="bg-sky-50 py-[32px] md:py-[80px] px-[3%] lg:px-[5%] xl:px-[10%]">
+      <div className="bg-sky-200 py-[32px] md:py-[80px] px-[3%] lg:px-[5%] xl:px-[10%]">
         <div>
           <h1 className="flex justify-center text-center text-[25px] lg:text-[32px] font-semibold">
             Latest Updates
@@ -58,7 +58,7 @@ const NewsAndArticles = ({
       <div className="px-[3%] lg:px-[5%] xl:px-[10%] pt-[30px] md:pt-[50px] pb-[50px] bg-gray-100">
         <div className="flex relative justify-end  w-[100%] md:w-[400px]">
           <input
-            className="pr-[14px] pl-[40px] py-[12px] w-full focus:outline-none border-b-2 border-primary focus:border-primary  focus:border-2 rounded-t-[6px] text-gray-900 text-[12px]"
+            className="pr-[14px] pl-[40px] py-[12px] w-full focus:outline-none border-b-2 border-primary1 focus:border-primary1  focus:border-2 rounded-t-[6px] text-gray-900 text-[12px]"
             autoComplete="on"
             name="searchPosts"
             type="text"
@@ -72,7 +72,7 @@ const NewsAndArticles = ({
           <CiSearch className="absolute top-1/2 left-[14px] transform  -translate-y-1/2" />
         </div>
         {searchPosts && (
-          <div className="w-[100%] md:w-[400px] px-[2%] py-[10px] md:py-[15px] bg-indigo-100 grid grid-cols-1 gap-[15px] rounded-b-[8px]">
+          <div className="w-[100%] md:w-[400px] px-[2%] py-[10px] md:py-[15px] bg-sky-100 grid grid-cols-1 gap-[15px] rounded-b-[8px]">
             {" "}
             <div className="mx-auto ">
               {searchLoad && (

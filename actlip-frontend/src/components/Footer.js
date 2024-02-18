@@ -115,7 +115,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="mt-[20px] lg:mt-[0px]">
-          <Link to="/home">
+          <Link to="/">
             <h3 className="font-[500] text-[12px] md:text-[16px] text-white">
               Home
             </h3>
