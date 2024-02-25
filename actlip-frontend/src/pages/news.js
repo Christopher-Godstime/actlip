@@ -22,6 +22,10 @@ const News = ({ match }) => {
     fetchPost();
   }, [match.params.id]);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   if (!post)
     return (
       <div className="w-[40px] mx-auto mt-[80px] h-screen">

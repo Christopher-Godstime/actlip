@@ -125,9 +125,13 @@ const Home = ({ posts }) => {
                 }}
                 className="mt-[24px] text-[16px] md:text-[18px] text-center text-white lg:text-start"
               >
-                Welcome to the Africa Center for Technology Law and Innovation
-                Policy, where we strive to shape the future of technology in
-                Africa through legal and policy frameworks.
+                Catalyzing a profound impact on the African technology and
+                innovation ecosystems through rigorous research, impactful
+                advocacies, vibrant fellowships, scholarly journals, and
+                transformative workshops. We believe in the power of informed
+                discourse to shape policies that not only reflect the dynamic
+                nature of technology but also ensure equitable access and
+                benefits for all.
               </m.h4>
             </div>
           </div>
@@ -142,26 +146,28 @@ const Home = ({ posts }) => {
           <div className="slide-track  flex gap-[30px] items-start">
             {posts.map((post) => (
               <div key={post._id} className="slide max-w-[250px]">
-                <div
-                  style={{
-                    paddingBottom: "60%",
-                    position: "relative",
-                    overflow: "hidden",
-                  }}
-                >
-                  <img
+                <Link to={`news-and-articles/${post._id}`}>
+                  <div
                     style={{
-                      position: "absolute",
-                      top: 0,
-                      left: 0,
-                      width: "100%",
-                      height: "100%",
-                      objectFit: "cover",
+                      paddingBottom: "60%",
+                      position: "relative",
+                      overflow: "hidden",
                     }}
-                    src={post.images[0].url}
-                    alt="Background"
-                  />
-                </div>
+                  >
+                    <img
+                      style={{
+                        position: "absolute",
+                        top: 0,
+                        left: 0,
+                        width: "100%",
+                        height: "100%",
+                        objectFit: "cover",
+                      }}
+                      src={post.images[0].url}
+                      alt="Background"
+                    />
+                  </div>
+                </Link>
                 <div className="w-[250px]">
                   <h4 className="text-[14px] font-[600] mt-[20px]">
                     {moment(post.createdAt).format("dddd, MMMM D, YYYY")}
@@ -202,8 +208,7 @@ const Home = ({ posts }) => {
                 </h1>
               </div>
               <h4 className=" mt-[6px] lg:mt-[19px] text-[12px] md:text-[16px] mb-[16px] lg:mb-[16px]  text-gray-600 ">
-                sed do eiusmod tempor incididunt ut labore et dolore magna
-                aliqua. Ut enim ad minim veniam,
+              To reimagine the formulation of technology law and innovation policy in Africa through empirical researches and intersectoral policy discourses.
               </h4>
             </div>
 
@@ -215,8 +220,7 @@ const Home = ({ posts }) => {
                 </h1>
               </div>
               <h4 className=" mt-[6px] lg:mt-[19px] text-[12px] md:text-[16px] mb-[16px] lg:mb-[16px] text-gray-600 ">
-                sed do eiusmod tempor incididunt ut labore et dolore magna
-                aliqua. Ut enim ad minim veniam,
+              To reshape and advance African technology and innovation ecosystems through research, law and policy.
               </h4>
             </div>
           </div>
@@ -258,7 +262,8 @@ const Home = ({ posts }) => {
                   <h4 className="mt-[10px] text-[12px] md:text-[16px]  z-40 px-[18px] md:px-[30px]">
                     Explore our latest impactful initiatives and innovations,
                     driving positive change in the technology landscape across
-                    the continent.
+                    the continent.<br></br>
+                    You can join the mission by becoming a part of our think-tank or fellowship.
                   </h4>
                   <Link to="/news-and-articles">
                     <button className=" flex text-white bg-primary1 hover:bg-sky-900 items-center text-[12px] md:text-[16px] font-semibold mt-[43px] z-40 px-[18px] py-[12px] rounded-[30px] mx-[18px] md:px-[30px]">

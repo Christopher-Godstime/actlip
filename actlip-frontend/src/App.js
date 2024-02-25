@@ -11,6 +11,7 @@ import Login from "./pages/login";
 import AboutUs from "./pages/about-us";
 import NewsAndArticles from "./pages/news-and-articles";
 import ContactUs from "./pages/contact-us";
+import PolicyTracker from "./pages/policy-tracker";
 import Projects from "./pages/projects";
 import Dashboard from "./pages/dashboard";
 import Register from "./pages/register";
@@ -110,6 +111,7 @@ function App() {
         />
         <Route exact path="/projects" component={Projects} />
         <Route exact path="/about-us" component={AboutUs} />
+        <Route exact path="/policy-tracker" component={PolicyTracker} />
         <Route exact path="/contact-us" component={ContactUs} />
 
         <Route
