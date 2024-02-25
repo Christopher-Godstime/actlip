@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import down2 from "../assets/down2.png";
 
 const PolicyTracker = () => {
   const [clickedIndex, setClickedIndex] = useState({});
@@ -12,120 +13,188 @@ const PolicyTracker = () => {
 
   const Dropdown = [
     {
-      title: "Introduction",
+      title: "Sed ut perspiciatis unde omnis",
+      type: "LEGISLATION",
+      government: "UNITED STAES",
+      status: "ELIGIBLE FOR SENATE FLOOR CONSIDERATION",
+      lastUpdated: "FEB 15, 2014",
       content:
-        "Mondu is a payment gateway that enables businesses to accept payments from customers through various payment channels, including debit/credit cards, bank transfers, and mobile wallets.",
+        "Sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?",
     },
     {
-      title: "Installation",
+      title: "Sed ut perspiciatis unde omnis",
+      type: "LEGISLATION",
+      government: "UNITED STAES",
+      status: "ELIGIBLE FOR SENATE FLOOR CONSIDERATION",
+      lastUpdated: "FEB 15, 2014",
       content:
-        "Connect platforms are platforms that facilitate payments between two or more parties, such as marketplaces, crowdfunding platforms, or peer-to-peer lending platforms.",
+        "Sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?",
     },
     {
-      title: "Get started",
+      title: "Sed ut perspiciatis unde omnis",
+      type: "LEGISLATION",
+      government: "UNITED STAES",
+      status: "ELIGIBLE FOR SENATE FLOOR CONSIDERATION",
+      lastUpdated: "FEB 15, 2014",
       content:
-        "You can integrate Mondu with your connect platform by using our APIs and SDKs. We offer APIs for various programming languages, including PHP, Java, and Python, as well as SDKs for mobile platforms such as iOS and Android. Please refer to our developer documentation for more information on how to integrate Mondu with your connect platform.",
+        "Sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?",
     },
     {
-      title: "Server settings",
+      title: "Sed ut perspiciatis unde omnis",
+      type: "LEGISLATION",
+      government: "UNITED STAES",
+      status: "ELIGIBLE FOR SENATE FLOOR CONSIDERATION",
+      lastUpdated: "FEB 15, 2014",
       content:
-        "To get started with Mondu integration, you need to create an account with us and obtain your API keys. Once you have your API keys, you can start integrating Mondu with your connect platform using our APIs and SDKs. Please refer to our developer documentation for detailed instructions on how to integrate Mondu with your connect platform.",
+        "Sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?",
+    },
+    {
+      title: "Sed ut perspiciatis unde omnis",
+      type: "LEGISLATION",
+      government: "UNITED STAES",
+      status: "ELIGIBLE FOR SENATE FLOOR CONSIDERATION",
+      lastUpdated: "FEB 15, 2014",
+      content:
+        "Sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?",
+    },
+    {
+      title: "Sed ut perspiciatis unde omnis",
+      type: "LEGISLATION",
+      government: "UNITED STAES",
+      status: "ELIGIBLE FOR SENATE FLOOR CONSIDERATION",
+      lastUpdated: "FEB 15, 2014",
+      content:
+        "Sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?",
+    },
+    {
+      title: "Sed ut perspiciatis unde omnis",
+      type: "LEGISLATION",
+      government: "UNITED STAES",
+      status: "ELIGIBLE FOR SENATE FLOOR CONSIDERATION",
+      lastUpdated: "FEB 15, 2014",
+      content:
+        "Sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?",
+    },
+    {
+      title: "Sed ut perspiciatis unde omnis",
+      type: "LEGISLATION",
+      government: "UNITED STAES",
+      status: "ELIGIBLE FOR SENATE FLOOR CONSIDERATION",
+      lastUpdated: "FEB 15, 2014",
+      content:
+        "Sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?",
+    },
+    {
+      title: "Sed ut perspiciatis unde omnis",
+      type: "LEGISLATION",
+      government: "UNITED STAES",
+      status: "ELIGIBLE FOR SENATE FLOOR CONSIDERATION",
+      lastUpdated: "FEB 15, 2014",
+      content:
+        "Sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?",
+    },
+    {
+      title: "Sed ut perspiciatis unde omnis",
+      type: "LEGISLATION",
+      government: "UNITED STAES",
+      status: "ELIGIBLE FOR SENATE FLOOR CONSIDERATION",
+      lastUpdated: "FEB 15, 2014",
+      content:
+        "Sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?",
     },
   ];
   return (
     <div>
-      {/* <div className="bg-white md:pt-[58px] pt-[30px] xl:px-[150px] 2xl:px-[150px] lg:px-[70px] px-[15px] md:px-[30px]">
-    <div>
-      <h1 className="flex justify-center text-center text-[25px] lg:text-[32px] font-semibold">
-        Documentation
-      </h1>
-      <div className="flex justify-center">
-        <h4 className=" mt-[6px] lg:mt-[16px] text-[12px] md:text-[16px]  text-center lg:w-[350px] text-gray-600 md:w-[350px]">
-          All Mondu documentation are designed with one goal in mind;
-          Simplicity.
-        </h4>
-      </div>
-    </div>
-  </div>
-
-  <div className="bg-white md:py-[58px] py-[30px] xl:px-[150px] 2xl:px-[150px] lg:px-[70px] px-[15px] md:px-[30px]">
-    <div>
-      <h1 className="flex justify-center text-center text-[25px] lg:text-[32px] font-semibold">
-        Build Your Own Custom Experiences
-      </h1>
-      <div className="flex justify-center">
-        <h4 className=" mt-[6px] lg:mt-[16px] text-[12px] md:text-[16px]  text-center text-gray-600 ">
-          Our API libraries provide developers with the tools they need to
-          create custom experiences for their users. With our API libraries,
-          developers can access data and functionality from our platform to
-          build new applications or integrate with existing ones. By
-          leveraging our APIs, developers can create unique user experiences
-          that are tailored to their specific needs and requirements.
-        </h4>
-      </div>
-    </div>
-  </div>
-
-  <div className="bg-white  xl:px-[150px] 2xl:px-[250px] lg:px-[70px] px-[15px] md:px-[30px] sm:grid sm:grid-cols-3 flex justify-center">
-    <div className="flex justify-center px-[10px] sm:px-[0px]">
-      <button className=" flex justify-center text-white hover:bg-teal-600 bg-primary items-center text-[12px] md:text-[16px] font-semibold md:mt-[20px] z-40  rounded-[30px]  md:px-[30px] md:py-[16] px-[6px] py-[4px]">
-        Connect Platforms
-      </button>
-    </div>
-
-    <div className="flex justify-center px-[10px] sm:px-[0px]">
-      <button className=" flex justify-center text-primary hover:bg-teal-100 items-center text-[12px] md:text-[16px] font-semibold md:mt-[20px] z-40  rounded-[30px]    bg-teal-50 md:px-[30px] md:py-[16] px-[6px] py-[4px]">
-        Web Hooks
-      </button>
-    </div>
-    <div className="flex justify-center px-[10px] sm:px-[0px]">
-      <button className=" flex justify-center text-primary hover:bg-teal-100  items-center text-[12px] md:text-[16px] font-semibold md:mt-[20px] z-40  rounded-[30px]    bg-teal-50 md:px-[30px] md:py-[16] px-[6px] py-[4px]">
-        API Libraries
-      </button>
-    </div>
-  </div>
-
-  <div className="bg-white py-[32px] md:py-[80px] xl:px-[150px] 2xl:px-[250px] lg:px-[70px] px-[15px] md:px-[30px]">
-    <div>
-      <h4 className="text-[16px] md:text-[18px] lg:text-[20px] font-semibold">
-        Connect Platforms
-      </h4>
-      <h4 className="text-[12px] md:text-[16px] lg:text-[16px]">
-        Introduction
-      </h4>
-    </div>
-    <div className=" border-[1px] border-gray-200 rounded-[5px] mt-[24px]">
-      {Dropdown.map((drop, i) => (
-        <div key={i} className="border-b-[1px] border-gray-300">
-          <div
-            onClick={handleClick(i)}
-            className="py-[28px] px-[32px] flex justify-between items-center "
-          >
-            <h4 className="text-[12px] md:text-[16px] lg:text-[16px] cursor-pointer font-medium">
-              {drop.title}
+      <div className="bg-sky-200 py-[32px] md:py-[80px] px-[3%] lg:px-[5%] xl:px-[10%]">
+        <div>
+          <h1 className="flex justify-center text-center text-[28px] lg:text-[35px] font-[700]">
+            POLICY TRACKER
+          </h1>
+          <div className="flex justify-center">
+            <h4 className=" mt-[6px] lg:mt-[16px] text-[12px] md:text-[14px]  text-center text-gray-900 leading-[25px]">
+              At vero eos et accusamus et iusto odio dignissimos ducimus qui
+              blanditiis praesentium voluptatum deleniti atque corrupti quos
+              dolores et quas molestias excepturi sint occaecati cupiditate non
+              provident, similique sunt in culpa qui officia deserunt mollitia
+              animi, id est laborum et dolorum fuga. Et harum quidem rerum
+              facilis est et expedita distinctio. Nam libero tempore, cum soluta
+              nobis est eligendi optio cumque nihil impedit quo minus id quod
+              maxime placeat facere possimus, omnis voluptas assumenda est,
+              omnis dolor repellendus.
             </h4>
-            <div
-              onClick={handleClick(i)}
-              className={`text-sm duration-300 cursor-pointer ${
-                clickedIndex[i] ? "rotate-90" : "rotate-0"
-              } `}
-            >
-              <img
-                className="w-[10px]"
-                onClick={handleClick(i)}
-                src={down2}
-              />
-            </div>
           </div>
-          {clickedIndex[i] ? (
-            <h4 className="text-[10px] md:text-[14px] lg:text-[16px]py-[34px] px-[38px] font-light -mt-[20px] mb-[28px]">
-              {drop.content}
-            </h4>
-          ) : null}
         </div>
-      ))}
-    </div>
-  </div> */}
+      </div>
+
+      <div className="bg-white py-[32px] md:py-[80px] px-[3%] lg:px-[5%] xl:px-[10%]">
+        <div>
+          <h1 className="flex justify-start text-center text-[25px] lg:text-[32px] font-[700]">
+            POLICY TRACKER
+          </h1>
+        </div>
+        <div className=" mb-[20px]">
+          {Dropdown.map((drop, i) => (
+            <div
+              key={i}
+              className="border-b-[2px] border-gray-300  rounded-[5px] mt-[24px] mb-[20px] "
+            >
+              <div
+                onClick={handleClick(i)}
+                className="py-[28px] px-[3%] flex justify-between items-center bg-sky-100 rounded-[5px]"
+              >
+                <h4 className="text-[18px]  cursor-pointer font-[600] ">
+                  {drop.title}
+                </h4>
+                <div
+                  onClick={handleClick(i)}
+                  className={`text-sm duration-300 cursor-pointer ${
+                    clickedIndex[i] ? "rotate-180" : "rotate-0"
+                  } `}
+                >
+                  <img
+                    className="w-[15px]"
+                    onClick={handleClick(i)}
+                    src={down2}
+                  />
+                </div>
+              </div>
+              {clickedIndex[i] ? (
+                <div>
+                  <div className="grid grid-cols-2 gap-[10px] py-[20px] mx-[5%]  border-b-[1px] border-gray-400">
+                    <h4 className="font-[600] text-[18px]">Type</h4>
+                    <h4 className="text-[10px] md:text-[14px] lg:text-[14px] leading-[20px] font-[500]">
+                      {drop.type}
+                    </h4>
+                  </div>
+                  <div className="grid grid-cols-2 gap-[10px] py-[20px] mx-[5%]  border-b-[1px] border-gray-400">
+                    <h4 className="font-[600] text-[18px]">GOVERNMENT</h4>
+                    <h4 className="text-[10px] md:text-[14px] lg:text-[14px] leading-[20px] font-[500]">
+                      {drop.government}
+                    </h4>
+                  </div>
+                  <div className="grid grid-cols-2 gap-[10px] py-[20px] mx-[5%]  border-b-[1px] border-gray-400">
+                    <h4 className="font-[600] text-[18px]">STATUS</h4>
+                    <h4 className="text-[10px] md:text-[14px] lg:text-[14px] leading-[20px] font-[500]">
+                      {drop.status}
+                    </h4>
+                  </div>
+                  <div className="grid grid-cols-2 gap-[10px] py-[20px] mx-[5%]  border-b-[1px] border-gray-400">
+                    <h4 className="font-[600] text-[18px]">LAST UPDATED</h4>
+                    <h4 className="text-[10px] md:text-[14px] lg:text-[14px] leading-[20px] font-[500]">
+                      {drop.lastUpdated}
+                    </h4>
+                  </div>
+                  <div className=" py-[20px] mx-[5%] font-light ">
+                    <h4 className="text-[10px] md:text-[14px] lg:text-[14px] leading-[20px]">
+                      {drop.content}
+                    </h4>
+                  </div>
+                </div>
+              ) : null}
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   );
 };

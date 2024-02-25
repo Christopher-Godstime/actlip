@@ -41,6 +41,18 @@ const Navbar = ({ show, setShow }) => {
           <div className=" flex items-center px-[16px]">
             <h4 className="text-black text-[12px] md:text-[16px] lg:text-[16px] font-medium mr-[8px] ">
               <NavLink
+                to="/policy-tracker"
+                style={({ isActive }) => {
+                  return { color: isActive ? "#2E3192" : "black" };
+                }}
+              >
+                Policy Tracker
+              </NavLink>
+            </h4>
+          </div>
+          <div className=" flex items-center px-[16px]">
+            <h4 className="text-black text-[12px] md:text-[16px] lg:text-[16px] font-medium mr-[8px] ">
+              <NavLink
                 to="/about-us"
                 style={({ isActive }) => {
                   return { color: isActive ? "#2E3192" : "black" };
@@ -146,6 +158,21 @@ const Navbar = ({ show, setShow }) => {
                   }}
                 >
                   News and Articles
+                </NavLink>
+              </h4>
+            </div>
+            <div className="  lg:px-[16px] h-[70px] min-h-fit">
+              <h4
+                onClick={() => setShow(!show)}
+                className="text-black text-[12px] md:text-[16px] lg:text-[16px] font-medium mr-[8px] hover:cursor-pointer flex justify-center"
+              >
+                <NavLink
+                  to="/policy-tracker"
+                  style={({ isActive }) => {
+                    return { color: isActive ? "#2E3192" : "black" };
+                  }}
+                >
+                  Policy Tracker
                 </NavLink>
               </h4>
             </div>
